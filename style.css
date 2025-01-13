@@ -1,0 +1,173 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Container for image and form */
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Left: Image section */
+.image-container {
+  flex: 1;
+  background-image: url("assets/halie-west-25xggax4bSA-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Semi-transparent logo overlay */
+.logo-overlay {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100%; /* Ensures it fills the parent container */
+  position: absolute; /* Ensures positioning over the background */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white; /* Ensures text and logo are visible */
+  text-align: center; /* Centers text below the logo */
+}
+
+.logo {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Right: Form section */
+.form-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* Create Account Button */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #596d48; /* Green button color matching the image */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #708a5c; /* Slightly lighter green on hover */
+}
+
+/* Input groups */
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb; /* Light border by default */
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Red border for invalid inputs */
+input:invalid {
+  border: 1px solid red;
+}
+
+/* Blue border and box-shadow for focused inputs */
+input:focus {
+  border: 1px solid blue;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .image-container {
+    height: 50vh; /* Adjust height for the image */
+  }
+}
